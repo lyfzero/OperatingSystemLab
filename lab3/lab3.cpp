@@ -173,21 +173,7 @@ int main(int argc, char *argv[]) {
             exit(-1);
         }
     }
-    // if ((int)(head_p = shmat(head_p_shmid, NULL, SHM_R | SHM_W)) == -1) {   // 将要读的位置
-    //     fprintf(stderr, "main head_p shmat error!\n");
-    //     fflush(stderr);
-    //     exit(-1);         
-    // }
-    // if ((int)(tail_p = shmat(tail_p_shmid, NULL, SHM_R | SHM_W)) == -1) {   // 将要写的位置
-    //     fprintf(stderr, "main tail_p shmat error!\n");
-    //     fflush(stderr);
-    //     exit(-1);         
-    // }
-    // if ((int)(read_n = shmat(read_n_shmid, NULL, SHM_R | SHM_W)) == -1) {   // writebuf最近一次读到的字节数
-    //     fprintf(stderr, "main read_n shmat error!\n");
-    //     fflush(stderr);
-    //     exit(-1);         
-    // }
+
     head_p = (int*)shmat(head_p_shmid, NULL, SHM_R | SHM_W);
     tail_p = (int*)shmat(tail_p_shmid, NULL, SHM_R | SHM_W);
     read_n = (int*)shmat(read_n_shmid, NULL, SHM_R | SHM_W);
